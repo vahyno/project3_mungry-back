@@ -3,6 +3,10 @@ body {
 	line-height: 1.618em;
 }
 
+.brand-logo {
+	margin-left: 1em;
+}
+
 /*home page*/
 .header h4 {
 	text-decoration: underline;
@@ -38,8 +42,7 @@ body {
 	margin: 5em;
 }
 
-.ingredients-section{
-	background-color: #C0C0C0;
+.ingredients-section {
 	margin: auto;
     width: 60%;
 }
@@ -65,4 +68,15 @@ img {
 	height: 17em;
 	background-attachment: fixed;
 	width: 100%;
+}
+
+#update-btn {
+	margin-top: 1em;
+	position: absolute;
+    right: 5.2%;
+}
+
+/*create post page*/
+textarea {
+	height: 9em;
 }
