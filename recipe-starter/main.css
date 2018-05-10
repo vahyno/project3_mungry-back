@@ -1,0 +1,56 @@
+body {
+	margin: 5em;
+	line-height: 1.618em;
+}
+
+/*home page*/
+.header h4 {
+	text-decoration: underline;
+}
+
+.header {
+	text-align: center;
+}
+
+.card.horizontal {
+	flex-direction: row;
+}
+
+.vote {
+	display: flex;
+	flex-direction: row;
+}
+
+/*single post page*/
+.single-post {
+	margin: 5em;
+}
+
+.ingredients-section{
+	background-color: #C0C0C0;
+	margin: auto;
+    width: 60%;
+}
+
+.ingredients {
+	
+}
+
+h5 {
+	text-align: center;
+}
+
+h4 {
+	text-align: center;
+}
+
+img {
+	background-size: cover;
+	justify-content: center;
+	align-content: center;
+	font-size: 2em;
+	background-repeat: no-repeat;
+	height: 17em;
+	background-attachment: fixed;
+	width: 100%;
+}
