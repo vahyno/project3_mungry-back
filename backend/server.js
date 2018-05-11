@@ -23,13 +23,22 @@ app.use(bodyParser.json());
 //routes
 
 app.get('/', function (req, res) {
-    res.send('Hello World!!!');
+  res.send('Hello World!!!');
 });
 
 //Recipe Routes
 app.get('/api/recipes', recipesController.index);
+app.post('/api/recipes', recipesController.create);
+app.get('/api/recipes/:recipe_id', recipesController.show);
+app.put('/api/recipes/:recipe_id', recipesController.update);
+// app.delete('/api/recipes/:recipe_id', recipesController.destroy);
 
 //Comment Routes
+app.get('/api/recipes/:recipe_id/comments', commentsController.index);
+app.post('/api/recipes/:recipe_id/comments', commentsController.create);
+// app.get('/api/recipes/:recipe_id/comments/:comment_id', commentsController.show);
+// app.put('/api/recipes/:recipe_id/comments/:comment_id', commentsController.update);
+app.delete('/api/recipes/:recipe_id/comments/:comment_id', commentsController.destroy);
 
 
 // server start
