@@ -1,7 +1,10 @@
+//requirements
 require('dotenv').config();
 
 var express = require('express');
 var app = express();
+
+//middleware
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -13,8 +16,11 @@ app.use(function(req, res, next) {
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
+
+
+// server start
 let port = process.env.PORT || 3001;
 
 app.listen(port, function() {
-  console.log(`Listening on port ${ port }`);
+  console.log(`'HTTP server listening at localhost ${ port } <3`);
 });
