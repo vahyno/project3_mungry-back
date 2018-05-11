@@ -1,8 +1,12 @@
 //requirements
 require('dotenv').config();
-
 const express = require('express');
 const app = express();
+
+
+var recipesController = require('../controllers/recipes');
+var commentsController = require('../controllers/comments');
+
 
 //middleware
 
@@ -22,6 +26,10 @@ app.get('/', function (req, res) {
     res.send('Hello World!!!');
 });
 
+//Recipe Routes
+app.get('/api/recipes', recipesController.index);
+
+//Comment Routes
 
 
 // server start
