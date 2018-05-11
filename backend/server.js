@@ -4,8 +4,8 @@ const express = require('express');
 const app = express();
 
 
-var recipesController = require('../controllers/recipes');
-var commentsController = require('../controllers/comments');
+var recipesController = require('./controllers/recipes');
+var commentsController = require('./controllers/comments');
 
 
 //middleware
