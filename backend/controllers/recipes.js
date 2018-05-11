@@ -17,7 +17,7 @@ function index (req, res){
 function show (req, res){
   Recipe.findById(req.params.recipe_id, function(err, recipe){
     if (err){
-      console.log('recipe err: 'err);
+      console.log('recipe err: ', err);
       res.send(err);
     } else {
       res.json(recipe);
@@ -28,7 +28,7 @@ function show (req, res){
 function create (req, res){
   Recipe.create(req.body, function(err, newRecipe){
     if (err){
-      console.log('New recipe err: 'err);
+      console.log('New recipe err: ', err);
       res.send(err);
     }else {
       res.json(newRecipe);
@@ -37,12 +37,26 @@ function create (req, res){
 }
 
 function update (req, res){
-
+  Recipe.findByIdAndUpdate(req.params.recipe_id, {$set: req.body}, function(err, updatedRecipe){
+    if (err) {
+      console.log('updatedRecipe err: ', err);
+      res.send(err);
+    } else {
+      res.json(updatedRecipe);
+    }
+  });
 }
 
-// function destroy(req, res){
-//
-// }
+function destroy(req, res){
+  Recipe.findByIdAndRemove(req.params.recipe_id, function(err, deletedRecipe){
+    if (err){
+      console.log('deletedRecipe err: ', err);
+      res.send(err);
+    } else {
+      res.send('Recipe Deleted')
+    }
+  })
+}
 
 
 module.exports.index = index;
