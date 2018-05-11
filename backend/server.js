@@ -1,8 +1,8 @@
 //requirements
 require('dotenv').config();
 
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 
 //middleware
 
@@ -13,8 +13,14 @@ app.use(function(req, res, next) {
   next();
 });
 
-var bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 app.use(bodyParser.json());
+
+//routes
+
+app.get('/', function (req, res) {
+    res.send('Hello World!!!');
+});
 
 
 
