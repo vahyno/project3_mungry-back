@@ -25,8 +25,8 @@ app.get('/', function (req, res) {
 
 
 // server start
-let port = process.env.PORT || 3001;
+let port = process.env.PORT || 3000;
 
 app.listen(port, function() {
-  console.log(`'HTTP server listening at localhost ${ port } <3`);
+  console.log(`HTTP server listening at localhost ${ port } <3`);
 });
