@@ -31,7 +31,7 @@ app.get('/api/recipes', recipesController.index);
 app.post('/api/recipes', recipesController.create);
 app.get('/api/recipes/:recipe_id', recipesController.show);
 app.put('/api/recipes/:recipe_id', recipesController.update);
-// app.delete('/api/recipes/:recipe_id', recipesController.destroy);
+app.delete('/api/recipes/:recipe_id', recipesController.destroy);
 
 //Comment Routes
 app.get('/api/recipes/:recipe_id/comments', commentsController.index);

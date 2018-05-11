@@ -26,8 +26,8 @@ function create(req, res){
           console.log('foundRecipe err: ',err);
           res.send(err);
         }else {
-          recipe.comments.push(createdComment);
-          recipe.save();
+          foundRecipe.comments.push(createdComment);
+          foundRecipe.save();
           res.json(createdComment);
           console.log(createdComment);
         }
