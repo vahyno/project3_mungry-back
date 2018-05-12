@@ -1,0 +1,77 @@
+.brand-logo {
+	margin-left: 1em;
+}
+
+/*home page*/
+.header h4 {
+	text-decoration: underline;
+}
+
+.header {
+	text-align: center;
+}
+
+.card.horizontal {
+	flex-direction: row;
+}
+
+.vote {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.vote-style {
+	text-align: center;
+}
+
+.nav-wrapper {
+	margin-bottom: 4em;
+}
+
+.vote h6 {
+	padding: 0em 2em;
+}
+
+/*single post page*/
+.single-post {
+	margin: 5em;
+}
+
+.ingredients-section {
+	margin: auto;
+    width: 60%;
+}
+
+.ingredients {
+
+}
+
+h5 {
+	text-align: center;
+}
+
+h4 {
+	text-align: center;
+}
+
+img {
+	background-size: cover;
+	justify-content: center;
+	align-content: center;
+	font-size: 2em;
+	background-repeat: no-repeat;
+	height: 17em;
+	background-attachment: fixed;
+	width: 100%;
+}
+
+#update-btn {
+	margin-top: 1em;
+	position: absolute;
+    right: 5.2%;
+}
+
+/*create post page*/
+textarea {
+	height: 9em;
+}
