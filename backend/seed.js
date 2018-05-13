@@ -15,7 +15,7 @@ var seedRecipes = [{
   description: 'This Thai Peanut Hummus is filled with Thai peanut sauce ingredients like Sriracha, garlic, and ginger! A healthy gluten free and vegan snack!',
   ingredients: '1 15-oz. can Chickpeas, 1 handful Cilantro leaves, 2 small cloves Garlic, 1/4 tsp Ginger - ground, 2 Green onions, 1 Lime - zest and juice, 1/2 tbsp Honey, 2 tbsp Peanut butter, 2 tbsp Sriracha, Salt, Pepper',
   directions: 'Add chickpeas, peanut butter, Sriracha, ginger, garlic, honey/maple syrup/agave, and salt and pepper to taste into a food processor. Process until broken up. Scrape the sides with a spatula as needed. With the motor running, drizzle in olive oil and ice water. This will help the mixture come together and get super-smooth! Once the hummus is processed to your desired texture, taste and adjust seasoning as necessary. Mix in peanuts, green onions, and cilantro with a spatula. Serve with tortilla chips and a squeeze of lime.',
-  image_url: `./public/imgs/thai-peanut-hummus.jpg`,
+  image_url: `./imgs/thai-peanut-hummus.jpg`,
   votes: 12,
   comments: [comments[0], comments[1]],
 },{
@@ -45,7 +45,7 @@ Squeeze in the juice of half a lime and pour in the egg whites. Allow the egg wh
 Once the eggs are cooked fully, transfer the mixture to a bowl with quinoa and top the quinoa.
 Top the vegetable mixture with sliced avocado and sprouts, and garnish with another squeeze of lime and some additional salt and pepper if preferred.
 Enjoy!`,
-  image_url: `../public/imgs/avocado.jpg`,
+  image_url: `./imgs/avocado.jpg`,
   votes: 30,
   comments: [],
 },{
@@ -58,8 +58,8 @@ Enjoy!`,
   directions: `Preheat oven to 375 degrees F (190 degrees C).
 Combine the egg yolks, sweetened condensed milk and lime juice. Mix well. Pour into unbaked graham cracker shell.
 Bake in preheated oven for 15 minutes. Allow to cool. Top with whipped topping and garnish with lime slices if desired.`,
-  // image_url: `/public/imgs/keylimepie.jpg`,
-  image_url: `https://images.media-allrecipes.com/userphotos/720x405/5339695.jpg`,
+  image_url: `./imgs/keylimepie.jpg`,
+  // image_url: `https://images.media-allrecipes.com/userphotos/720x405/5339695.jpg`,
   votes: 310,
   comments: [comments[2]],
 }]
