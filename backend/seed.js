@@ -45,7 +45,7 @@ Squeeze in the juice of half a lime and pour in the egg whites. Allow the egg wh
 Once the eggs are cooked fully, transfer the mixture to a bowl with quinoa and top the quinoa.
 Top the vegetable mixture with sliced avocado and sprouts, and garnish with another squeeze of lime and some additional salt and pepper if preferred.
 Enjoy!`,
-  image_url: `/public/imgs/keylimepie.jpg`,
+  image_url: `/public/imgs/avocado.jpg`,
   votes: 30,
   comments: [],
 },{
