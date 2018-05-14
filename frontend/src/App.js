@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch, Link } from 'react-router-dom';
-import Recepies from './components/Recepies';
+import Recipes from './components/Recipes';
 
 import './App.css';
 
@@ -22,7 +22,7 @@ class App extends Component {
         <h1>Hello World! App.js</h1>
 
         <Switch>
-          <Route path="/" exact component={Recepies} />
+          <Route path="/" exact component={Recipes} />
         </Switch>
 
 

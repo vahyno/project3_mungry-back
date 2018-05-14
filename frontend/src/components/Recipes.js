@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import RecepiesModel from '../models/RecepiesModel';
+import RecipesModel from '../models/RecipesModel';
 
 
-class Recepies extends Component {
+class Recipes extends Component {
   state = {
     results: null,
   }
 
   componentDidMount() {
-    RecepiesModel.searchAll()
+    RecipesModel.searchAll()
       .then(data =>  {
         console.log(data)
         this.setState({
@@ -74,4 +74,4 @@ class Recepies extends Component {
 
 }
 
-export default Recepies;
+export default Recipes;

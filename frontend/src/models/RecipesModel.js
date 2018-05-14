@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-class RecepiesModel {
+class RecipesModel {
   static searchAll = () => {
     const request = axios.get(`http://localhost:8080/api/recipes/`);
     return request;
@@ -8,4 +8,4 @@ class RecepiesModel {
 
 }
 
-export default RecepiesModel;
+export default RecipesModel;
