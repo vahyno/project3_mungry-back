@@ -20,10 +20,11 @@ class Recepies extends Component {
   render(){
 
     console.log(this.state.results)
+
     let results = this.state.results
       ? this.state.results
         .sort(((a,b) => {
-          return a.title - b.title;
+          return b.votes - a.votes;
         })).map(recipe => {
           console.log("Single Recipe: ", recipe)
 
