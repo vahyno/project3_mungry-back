@@ -12,6 +12,12 @@ class RecipesModel {
     return request;
   }
 
+  static findRecipe = (recipe_id) => {
+    const request = axios.get(`http://localhost:8080/api/recipes/${recipe_id}`);
+    return request;
+  }
+
+
 
 }
 
