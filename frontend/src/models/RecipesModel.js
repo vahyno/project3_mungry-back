@@ -23,6 +23,11 @@ class RecipesModel {
     return request;
   }
 
+  static commentDestroy = (recipe_id, comment_id) => {
+    const request = axios.delete(`http://localhost:8080/api/recipes/${recipe_id}/comments/${comment_id}`)
+    return request;
+  }
+
 
 
 }

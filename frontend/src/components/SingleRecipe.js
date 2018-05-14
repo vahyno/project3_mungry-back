@@ -35,12 +35,7 @@ class SingleRecipe extends Component {
     .then(newComment=>{
       this.setState({
         post : {
-          title: this.state.title,
-          description: this.state.description,
-          ingredients: this.state.ingredients,
-          directions: this.state.directions,
-          image_url: this.state.image_url,
-          votes: this.state.votes,
+          ...this.state.post,
           comments: this.state.post.comments.concat(newComment.data),
           // comments: [...this.state.post.comments, newComment.data]
         },
@@ -48,8 +43,28 @@ class SingleRecipe extends Component {
       });
     });
     console.log(this.state)
-
   }
+
+  deleteComment = (comment_id) => {
+    let recipeId = this.props.match.params.recipe_id;
+    console.log("recipeId ",recipeId);
+    console.log("comment_id ", comment_id );
+    RecipesModel.commentDestroy(recipeId, comment_id)
+    .then(commentUpdate=>{
+      console.log(commentUpdate);
+      let updatedComments = this.state.post.comments.filter(comment=>{
+        return comment._id !== comment_id;
+      });
+      console.log(updatedComments);
+      this.setState({
+        post: {
+          ...this.state.post, //spread do not change state except (comments)
+          comments: updatedComments //comments
+        }
+      })
+    })
+  }
+
 
   render(){
     let post = this.state.post !== null ? this.state.post : <h2>Loading...</h2>
@@ -59,7 +74,7 @@ class SingleRecipe extends Component {
       return (
         <div className="comment" key={comment._id}>
           <div className="card">
-           <div className="card-body">{ comment.content }<a className="btn-floating btn-small waves-effect waves-light red">x</a>
+           <div className="card-body">{ comment.content }<button onClick={()=>this.deleteComment(comment._id)} className="btn-floating btn-small waves-effect waves-light red">x</button>
           </div>
         </div>
       </div>)
