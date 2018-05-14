@@ -84,21 +84,21 @@ class NewRecipe extends Component {
         <div className="column">
           <form className="col s12" onSubmit={this.onFormSubmit}>
             <div className="input-field col s12">
-              <input onChange={ this.handleTitleChange } value={this.state.title} placeholder="Title" id="title" type="text" className="validate"/>
+              <input onChange={ this.handleTitleChange } value={this.state.title} placeholder="Title" id="title" type="text" className="validate" required/>
             </div>
             <div className="input-field col s12">
-              <input onChange={ this.handleDescriptionChange } value={this.state.description} placeholder="Description" id="Description" type="text" className="validate"/>
+              <input onChange={ this.handleDescriptionChange } value={this.state.description} placeholder="Description" id="Description" type="text" className="validate" required/>
             </div>
             <div className="input-field col s12" >
-              <textarea cols="40" rows="5" onChange={ this.handleIngredientsChange } value={this.state.ingredients} placeholder="Ingredients" className="validate" id="ingredients"></textarea>
+              <textarea cols="40" rows="5" onChange={ this.handleIngredientsChange } value={this.state.ingredients} placeholder="Ingredients" className="validate" id="ingredients" required></textarea>
             </div>
             <div className="input-field col s12" >
-              <textarea cols="40" rows="5" onChange={ this.handleDirectionsChange } value={this.state.directions} placeholder="Directions" className="validate" id="directions"></textarea>
+              <textarea cols="40" rows="5" onChange={ this.handleDirectionsChange } value={this.state.directions} placeholder="Directions" className="validate" id="directions" required></textarea>
             </div>
             <div className="input-field col s12">
               <input onChange={ this.handleThumbnailChange } value={this.state.thumbnail} placeholder="Add image source" id="image" type="text" className="validate"/>
             </div>
-            <button className="btn waves-effect waves-light" type="submit" name="action"><i className="material-icons">Create</i></button>
+            <button className="btn waves-effect waves-light" type="submit" name="action">Create</button>
           </form>
         </div>
 

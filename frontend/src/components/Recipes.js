@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import RecipesModel from '../models/RecipesModel';
+import { Link } from 'react-router-dom';
 
 
 class Recipes extends Component {
@@ -54,7 +55,7 @@ class Recipes extends Component {
                  </div>
                </div>
                <div className="card-action">
-                 <a href="./post.html">How to make</a>
+                 <Link to ={`/recipes/${recipe._id}`}>How to make</Link>
                </div>
              </div>
             </div>
