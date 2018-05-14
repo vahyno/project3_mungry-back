@@ -5,12 +5,8 @@ import RecipesModel from '../models/RecipesModel';
 
 class SingleRecipe extends Component {
   state = {
-    // title: '',
-    // ingredients: '',
-    // directions: '',
-    // thumbnail: '',
-    // comments: null,
-    post: null
+    post: null,
+    query: '',
   }
   componentDidMount() {
     let recipeId = this.props.match.params.recipe_id;
@@ -21,6 +17,38 @@ class SingleRecipe extends Component {
         post: data.data
       });
     });
+  }
+
+  handleCommentForm = (event) => {
+    let query = event.target.value;
+    this.setState({
+      query,
+    });
+    console.log(query);
+  }
+
+  onFormSubmit = (event) =>{
+    let recipeId = this.props.match.params.recipe_id
+    event.preventDefault();
+    let content = this.state.query;
+    RecipesModel.newComment(recipeId, content)
+    .then(newComment=>{
+      this.setState({
+        post : {
+          title: this.state.title,
+          description: this.state.description,
+          ingredients: this.state.ingredients,
+          directions: this.state.directions,
+          image_url: this.state.image_url,
+          votes: this.state.votes,
+          comments: this.state.post.comments.concat(newComment.data),
+          // comments: [...this.state.post.comments, newComment.data]
+        },
+        query: '',
+      });
+    });
+    console.log(this.state)
+
   }
 
   render(){
@@ -56,23 +84,24 @@ class SingleRecipe extends Component {
         </div>
 
         <div className="row">
-          <form className="col s12">
+          <form className="col s12" onSubmit={ this.onFormSubmit }>
             <div className="row">
               <div className="input-field col s6">
-                <input placeholder="Write your comment!" id="comment" type="text" className="validate" />
+                <input onInput={this.handleCommentForm}
+                  value={this.state.query}
+                  placeholder="Write your comment!"
+                  id="comment"
+                  type="text"
+                  className="validate" />
               </div>
             </div>
-              <a className="waves-effect waves-light btn">New Comment</a>
+              <button className="waves-effect waves-light btn" type="submit" name="action">New Comment</button>
           </form>
         </div>
-
         { eachComment }
-
       </div>
     )
   }
-
-
 
 }
 

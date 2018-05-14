@@ -17,6 +17,12 @@ class RecipesModel {
     return request;
   }
 
+  static newComment = (recipe_id, content) => {
+    // console.log('Axios recipe_id', recipe_id, 'Axios content', content)
+    const request = axios.post(`http://localhost:8080/api/recipes/${recipe_id}/comments`, {content: content});
+    return request;
+  }
+
 
 
 }
