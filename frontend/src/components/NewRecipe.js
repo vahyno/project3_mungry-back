@@ -17,14 +17,16 @@ class NewRecipe extends Component {
     this.setState({
       title: e.target.value,
     });
-    console.log(this.title);
+    // console.log(this.title);
+    // console.log('name', e.target.name)
   }
 
   handleDescriptionChange = (e) => {
     this.setState({
       description: e.target.value,
     });
-    console.log(this.description);
+    // console.log('name', e.target.name)
+    // console.log(this.description);
 
   }
 
@@ -32,22 +34,32 @@ class NewRecipe extends Component {
     this.setState({
       ingredients: e.target.value,
     });
-    console.log(this.ingredients);
+    // console.log(this.ingredients);
   }
 
   handleDirectionsChange = (e) => {
     this.setState({
       directions: e.target.value,
     });
-    console.log(this.directions);
+    // console.log(this.directions);
   }
 
   handleThumbnailChange = (e) => {
     this.setState({
       thumbnail: e.target.value,
     });
-    console.log(this.thumbnail);
+    // console.log(this.thumbnail);
   }
+
+  // handleInputChange = (e) => {
+  //   // console.log('event', e)
+  //   // console.log('target', e.target)
+  //   let inputFieldName = e.target.name;
+  //   this.setState({
+  //     [inputFieldName]: e.target.value
+  //   })
+  //   // console.log('state', this.state)
+  // }
 
 
   onFormSubmit = (e)=> {
@@ -84,10 +96,10 @@ class NewRecipe extends Component {
         <div className="column">
           <form className="col s12" onSubmit={this.onFormSubmit}>
             <div className="input-field col s12">
-              <input onChange={ this.handleTitleChange } value={this.state.title} placeholder="Title" id="title" type="text" className="validate" required/>
+              <input onChange={ this.handleTitleChange } name="title" value={this.state.title} placeholder="Title" id="title" type="text" className="validate" required/>
             </div>
             <div className="input-field col s12">
-              <input onChange={ this.handleDescriptionChange } value={this.state.description} placeholder="Description" id="Description" type="text" className="validate" required/>
+              <input onChange={ this.handleDescriptionChange } name="description" value={this.state.description} placeholder="Description" id="Description" type="text" className="validate" required/>
             </div>
             <div className="input-field col s12" >
               <textarea cols="40" rows="5" onChange={ this.handleIngredientsChange } value={this.state.ingredients} placeholder="Ingredients" className="validate" id="ingredients" required></textarea>
