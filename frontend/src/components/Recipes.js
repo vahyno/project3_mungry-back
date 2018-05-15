@@ -22,28 +22,22 @@ class Recipes extends Component {
     console.log('recipe_id',recipe_id);
     let recipeToUpdate = this.state.results.filter(result => result._id === recipe_id);
     let updatedVotes = recipeToUpdate[0].votes + 1;
-    let recipe = {...recipeToUpdate[0], votes: updatedVotes}
-    console.log('recipeToUpdate',recipeToUpdate);
-    console.log('updatedVotes',updatedVotes);
-    console.log("Recipe with updated vote" , recipe)
+    let recipe = {...recipeToUpdate[0], votes: updatedVotes};
+
+    // console.log('recipeToUpdate',recipeToUpdate);
+    // console.log('updatedVotes',updatedVotes);
+    // console.log("Recipe with updated vote" , recipe)
 
     RecipesModel.voteUpdate(recipe_id, recipe)
     .then(updatedRecipe => {
       console.log('Updated Recipe: ',updatedRecipe.data);
-
-      // let updatedRecipes = this.state.results.filter(recipe => recipe._id !== updatedRecipe._id);
-      // updatedRecipe.votes = updatedVotes;
+      let updatedRecipes = this.state.results.filter(recipe => recipe._id !== recipe_id);
+      let returnedRecipe = updatedRecipe.data;
       // console.log('updatedRecipes', updatedRecipes);
       // console.log('updatedRecipe.votes', updatedRecipe.votes);
-      // let newRecipes = updatedRecipes.concat(updatedRecipe);
-      // this.setState({ results: newRecipes })
-
-      // this.setState({
-      //   results: updatedResults
-      // });
-      // console.log(results.data);
+      let newRecipes = updatedRecipes.concat(returnedRecipe);
+      this.setState({ results: newRecipes })
     });
-    // console.log(this.state);
   }
 
   decrementVote = (recipe_id) => {
@@ -54,7 +48,7 @@ class Recipes extends Component {
 
   render(){
 
-    console.log(this.state.results)
+    console.log('State = ', this.state.results)
 
     let results = this.state.results !== null
       ? this.state.results
@@ -64,7 +58,7 @@ class Recipes extends Component {
         .map(recipe => {
           // console.log("Single Recipe: ", recipe)
           return (
-          <div className="col s12 m7" key={recipe._id} recipe={recipe}>
+          <div className="col s12 m7" key={recipe._id}>
            <h4 className="header">{recipe.title}</h4>
 
            <div className="card horizontal">

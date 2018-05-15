@@ -66,9 +66,13 @@ img {
 }
 
 #update-btn {
-	margin-top: 1em;
-	position: absolute;
-    right: 5.2%;
+	margin-top: 0.5em;
+	margin-left: 0.25em;
+}
+
+#delete-btn {
+	margin-top: 0.5em;
+	margin-left: 0.25em;
 }
 
 /*create post page*/

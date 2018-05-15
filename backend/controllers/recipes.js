@@ -37,14 +37,30 @@ function create (req, res){
 }
 
 function update (req, res){
-  Recipe.findByIdAndUpdate(req.params.recipe_id, {$set: req.body}, function(err, updatedRecipe){
-    if (err) {
-      console.log('updatedRecipe err: ', err);
-      res.send(err);
-    } else {
-      res.json(updatedRecipe);
+  // Recipe.findByIdAndUpdate(req.params.recipe_id, {$set: req.body}, function(err, updatedRecipe){
+  //   if (err) {
+  //     console.log('updatedRecipe err: ', err);
+  //     res.send(err);
+  //   } else {
+  //     console.log('updatedRecipe: ', updatedRecipe);
+  //     res.json(updatedRecipe);
+  //   }
+  // });
+  Recipe.findById(req.params.recipe_id, function(err, foundRecipe) {
+    if (err) res.send(err);
+    else {
+      foundRecipe.title = req.body.title;
+      foundRecipe.description = req.body.description;
+      foundRecipe.ingredients = req.body.ingredients;
+      foundRecipe.directions = req.body.directions;
+      foundRecipe.image_url = req.body.image_url;
+      foundRecipe.votes = req.body.votes;
+      foundRecipe.comments = req.body.comments;
+
+      foundRecipe.save();
+      res.json(foundRecipe)
     }
-  });
+  })
 }
 
 function destroy(req, res){

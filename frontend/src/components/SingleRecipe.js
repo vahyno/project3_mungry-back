@@ -85,7 +85,8 @@ class SingleRecipe extends Component {
         <h4 id=""> {post.title} </h4>
         <img src={post.image_url} alt={post.title}/>
         <div>
-        <a className="waves-effect waves-light btn" id="update-btn">Update Recipe</a>
+          <button className="waves-effect waves-light btn right" type="submit" name="action" id="update-btn">Update Recipe</button>
+          <button className="waves-effect waves-light btn right" type="submit" name="action" id="delete-btn">Delete Recipe</button>
         </div>
         <div className="single-post">
           <div className="ingredients-section">
