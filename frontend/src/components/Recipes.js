@@ -11,7 +11,7 @@ class Recipes extends Component {
   componentDidMount() {
     RecipesModel.searchAll()
       .then(data =>  {
-        console.log(data)
+        // console.log(data)
         this.setState({
           results: data.data
         });
@@ -19,16 +19,25 @@ class Recipes extends Component {
   }
 
   incrementVote = (recipe_id) => {
-    let recipeToUpdate = this.state.results.filter(result => result._id === recipe_id);
-    console.log('recipeToUpdate',recipeToUpdate);
     console.log('recipe_id',recipe_id);
+    let recipeToUpdate = this.state.results.filter(result => result._id === recipe_id);
+    let updatedVotes = recipeToUpdate[0].votes + 1;
+    let recipe = {...recipeToUpdate[0], votes: updatedVotes}
+    console.log('recipeToUpdate',recipeToUpdate);
+    console.log('updatedVotes',updatedVotes);
+    console.log("Recipe with updated vote" , recipe)
 
-    let updatedRecipe = recipeToUpdate[0].votes + 1;
-    // console.log("checking votes" , votes);
-    let recipe = {...recipeToUpdate[0], votes: updatedRecipe}
-    console.log("incremented vote" , recipe)
     RecipesModel.voteUpdate(recipe_id, recipe)
-    .then(results => {
+    .then(updatedRecipe => {
+      console.log('Updated Recipe: ',updatedRecipe.data);
+
+      // let updatedRecipes = this.state.results.filter(recipe => recipe._id !== updatedRecipe._id);
+      // updatedRecipe.votes = updatedVotes;
+      // console.log('updatedRecipes', updatedRecipes);
+      // console.log('updatedRecipe.votes', updatedRecipe.votes);
+      // let newRecipes = updatedRecipes.concat(updatedRecipe);
+      // this.setState({ results: newRecipes })
+
       // this.setState({
       //   results: updatedResults
       // });
@@ -37,9 +46,7 @@ class Recipes extends Component {
     // console.log(this.state);
   }
 
-  decrementVote = () => {
-    let votes = this.state.votes;
-    console.log("checking vote - ", votes)
+  decrementVote = (recipe_id) => {
 
   }
 
@@ -55,8 +62,7 @@ class Recipes extends Component {
           return b.votes - a.votes;
         })
         .map(recipe => {
-          console.log("Single Recipe: ", recipe)
-
+          // console.log("Single Recipe: ", recipe)
           return (
           <div className="col s12 m7" key={recipe._id} recipe={recipe}>
            <h4 className="header">{recipe.title}</h4>

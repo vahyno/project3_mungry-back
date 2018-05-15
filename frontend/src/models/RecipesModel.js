@@ -7,7 +7,7 @@ class RecipesModel {
   }
 
   static createNew = (data) => {
-    console.log("axios createdata",data);
+    // console.log("axios createdata",data);
     const request = axios.post(`http://localhost:8080/api/recipes/`, data);
     return request;
   }
@@ -29,7 +29,7 @@ class RecipesModel {
   }
 
   static voteUpdate = (recipe_id, recipe) => {
-    console.log('Axios recipe_id', recipe_id)
+    // console.log('Axios recipe_id: ', recipe_id,'Axios recipe: ' ,recipe)
     const request = axios.put(`http://localhost:8080/api/recipes/${recipe_id}`, recipe);
     return request;
   }
