@@ -66,18 +66,19 @@ class SingleRecipe extends Component {
   }
 
   handleUpdate = (recipe_id) => {
-
+    console.log("recipeId ",recipe_id);
   }
 
   handleDelete = (recipe_id) => {
-    // let recipeId = this.props.match.params.recipe_id;
     console.log("recipeId ",recipe_id);
     if (window.confirm('Are you sure you want to delete this recipe?')) {
-      RecipesModel.recipeDestroy(recipe_id)
-      .then(recipeErased=>{
-        console.log(recipeErased);
-        this.props.history.push('/');
-      })
+      if (window.confirm('Seriosly? Do you want to delete this recipe? Last warning!' )) {
+        RecipesModel.recipeDestroy(recipe_id)
+        .then(recipeErased=>{
+          console.log(recipeErased);
+          this.props.history.push('/');
+        })
+      }
     }
   }
 
@@ -98,8 +99,8 @@ class SingleRecipe extends Component {
 
     return (
       <div>
-        <h4 id=""> {post.title} </h4>
-        <img src={post.image_url} alt={post.title}/>
+        <h4 id=""> { post.title } </h4>
+        <img src={ post.image_url } alt={post.title}/>
         <div>
           <button onClick={() => this.handleUpdate(post._id)} className="waves-effect waves-light indigo lighten-2 btn right update-delete-btn">Update Recipe</button>
           <button onClick={() => this.handleDelete(post._id)} className="waves-effect waves-light indigo lighten-2 btn right update-delete-btn">Delete Recipe</button>
