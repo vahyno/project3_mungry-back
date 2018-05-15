@@ -7,12 +7,31 @@ import { Link } from 'react-router-dom';
 
 class UpdateRecipe extends Component {
 
+
   state = {
-    title: '',
-    description: '',
-    ingredients: '',
-    directions: '',
-    thumbnail: '',
+    post: '',
+  }
+
+  componentDidMount() {
+    console.log('State passed through form: ', this.props.location.state.oldFormData)
+    let oldFormData = this.props.location.state.oldFormData;
+    this.setState({
+      title: oldFormData.title,
+      description: oldFormData.description,
+      ingredients: oldFormData.ingredients,
+      directions: oldFormData.directions,
+      thumbnail: oldFormData.image_url,
+      votes: oldFormData.votes,
+    });
+
+    // let recipeId = this.props.match.params.recipe_id;
+    // RecipesModel.findRecipe(recipeId)
+    // .then(data => {
+    //   // console.log('SingleRecipe by ID: ',data);
+    //   this.setState({
+    //     post: data.data
+    //   });
+    // });
   }
 
 
@@ -66,23 +85,26 @@ class UpdateRecipe extends Component {
       image_url: this.state.thumbnail,
       votes: this.state.votes,
       comments: this.state.comments
-
     }
-    RecipesModel.createNew(formData)
+    let recipeId = this.props.match.params.recipe_id;
+
+    RecipesModel.recipeUpdate(recipeId,formData)
       .then(data =>  {
         console.log(data)
         this.setState({
           results: data.data
         });
-        this.props.history.push('/');
+        this.props.history.push(`/recipes/${recipeId}`);
       });
   }
 
   render(){
 
 console.log('update')
+console.log(11, this.props)
+console.log(22, this.state)
 
-  let recipeId = this.props.match.params.recipe_id
+  let recipeId = this.props.match.params.recipe_id;
 
     return (
 

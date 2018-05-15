@@ -50,7 +50,7 @@ Enjoy!`,
   comments: [],
 },{
   title: 'Key Lime Pie',
-  description: 'This is the 1999 American Pie Council\'s National Pie Championship\'s first place winner',
+  description: 'This is the 1999 American Pie Council\'s National Pie Championship\'s first place winner.',
   ingredients: `5 egg beaten yolks ,
                 1 (14 ounce) can sweetened condensed milk,
                 1/2 cup key lime juice,
