@@ -10,6 +10,12 @@ class UpdateRecipe extends Component {
 
   state = {
     post: '',
+    title: '',
+    description: '',
+    ingredients: '',
+    directions: '',
+    thumbnail: '',
+    votes: ''
   }
 
   componentDidMount() {
@@ -23,15 +29,6 @@ class UpdateRecipe extends Component {
       thumbnail: oldFormData.image_url,
       votes: oldFormData.votes,
     });
-
-    // let recipeId = this.props.match.params.recipe_id;
-    // RecipesModel.findRecipe(recipeId)
-    // .then(data => {
-    //   // console.log('SingleRecipe by ID: ',data);
-    //   this.setState({
-    //     post: data.data
-    //   });
-    // });
   }
 
 
