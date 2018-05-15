@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import RecipesModel from '../models/RecipesModel';
 
 
@@ -65,10 +65,6 @@ class SingleRecipe extends Component {
     })
   }
 
-  handleUpdate = (recipe_id) => {
-    console.log("recipeId ",recipe_id);
-  }
-
   handleDelete = (recipe_id) => {
     console.log("recipeId ",recipe_id);
     if (window.confirm('Are you sure you want to delete this recipe?')) {
@@ -102,7 +98,8 @@ class SingleRecipe extends Component {
         <h4 id=""> { post.title } </h4>
         <img src={ post.image_url } alt={post.title}/>
         <div>
-          <button onClick={() => this.handleUpdate(post._id)} className="waves-effect waves-light indigo lighten-2 btn right update-delete-btn">Update Recipe</button>
+        {/*  <button className="waves-effect waves-light indigo lighten-2 btn right update-delete-btn">Update Recipe</button> */}
+          <Link to ={`/recipes/${post._id}/update`} className="waves-effect waves-light indigo lighten-2 btn right update-delete-btn">Update Recipe</Link>
           <button onClick={() => this.handleDelete(post._id)} className="waves-effect waves-light indigo lighten-2 btn right update-delete-btn">Delete Recipe</button>
         </div>
         <div className="single-post">

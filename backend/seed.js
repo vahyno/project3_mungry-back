@@ -6,7 +6,7 @@ var comments = [{
 }, {
   content: 'Easy to make, would do again.',
 }, {
-  content: 'Awesome!!!!!!!.',
+  content: 'Awesome !!!!!!!',
 }];
 
 

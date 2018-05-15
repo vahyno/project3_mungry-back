@@ -3,6 +3,8 @@ import { Route, Switch, Link } from 'react-router-dom';
 import Recipes from './components/Recipes';
 import NewRecipe from './components/NewRecipe';
 import SingleRecipe from './components/SingleRecipe';
+import UpdateRecipe from './components/UpdateRecipe';
+
 
 
 
@@ -27,7 +29,8 @@ class App extends Component {
         <Switch>
           <Route path="/" exact component={Recipes} />
           <Route path="/recipes/new" exact component={NewRecipe} />
-          <Route path="/recipes/:recipe_id" component={SingleRecipe} />
+          <Route path="/recipes/:recipe_id/update" exact component={UpdateRecipe} />
+          <Route path="/recipes/:recipe_id" exact component={SingleRecipe} />
         </Switch>
 
 

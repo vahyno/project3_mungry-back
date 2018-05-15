@@ -40,9 +40,11 @@ class RecipesModel {
     return request;
   }
 
-
-
-
+  static recipeUpdate = (recipe_id, recipe) => {
+    console.log('Axios recipe_id: ', recipe_id,'Axios recipe: ',recipe)
+    const request = axios.put(`http://localhost:8080/api/recipes/${recipe_id}`, recipe);
+    return request;
+  }
 }
 
 export default RecipesModel;
