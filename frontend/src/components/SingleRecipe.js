@@ -65,6 +65,22 @@ class SingleRecipe extends Component {
     })
   }
 
+  handleUpdate = (recipe_id) => {
+
+  }
+
+  handleDelete = (recipe_id) => {
+    // let recipeId = this.props.match.params.recipe_id;
+    console.log("recipeId ",recipe_id);
+    if (window.confirm('Are you sure you want to delete this recipe?')) {
+      RecipesModel.recipeDestroy(recipe_id)
+      .then(recipeErased=>{
+        console.log(recipeErased);
+        this.props.history.push('/');
+      })
+    }
+  }
+
 
   render(){
     let post = this.state.post !== null ? this.state.post : <h2>Loading...</h2>
@@ -74,7 +90,7 @@ class SingleRecipe extends Component {
       return (
         <div className="comment" key={comment._id}>
           <div className="card">
-           <div className="card-body">{ comment.content }<button onClick={()=>this.deleteComment(comment._id)} className="btn-floating btn-small waves-effect waves-light red">x</button>
+           <div className="card-body">{ comment.content }<button onClick={()=>this.deleteComment(comment._id)} className="btn-floating btn-small waves-effect waves-light red right">x</button>
           </div>
         </div>
       </div>)
@@ -85,8 +101,8 @@ class SingleRecipe extends Component {
         <h4 id=""> {post.title} </h4>
         <img src={post.image_url} alt={post.title}/>
         <div>
-          <button className="waves-effect waves-light btn right" type="submit" name="action" id="update-btn">Update Recipe</button>
-          <button className="waves-effect waves-light btn right" type="submit" name="action" id="delete-btn">Delete Recipe</button>
+          <button onClick={() => this.handleUpdate(post._id)} className="waves-effect waves-light indigo lighten-2 btn right update-delete-btn">Update Recipe</button>
+          <button onClick={() => this.handleDelete(post._id)} className="waves-effect waves-light indigo lighten-2 btn right update-delete-btn">Delete Recipe</button>
         </div>
         <div className="single-post">
           <div className="ingredients-section">
@@ -111,7 +127,7 @@ class SingleRecipe extends Component {
                   className="validate" />
               </div>
             </div>
-              <button className="waves-effect waves-light btn" type="submit" name="action">New Comment</button>
+              <button className="waves-effect waves-light indigo lighten-2 btn" type="submit" name="action">New Comment</button>
           </form>
         </div>
         { eachComment }

@@ -34,6 +34,14 @@ class RecipesModel {
     return request;
   }
 
+  static recipeDestroy = (recipe_id) => {
+    console.log('Axios recipe_id: ', recipe_id)
+    const request = axios.delete(`http://localhost:8080/api/recipes/${recipe_id}`);
+    return request;
+  }
+
+
+
 
 }
 

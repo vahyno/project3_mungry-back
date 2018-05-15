@@ -65,14 +65,23 @@ img {
 	width: 100%;
 }
 
-#update-btn {
+.update-delete-btn {
 	margin-top: 0.5em;
 	margin-left: 0.25em;
 }
 
-#delete-btn {
-	margin-top: 0.5em;
-	margin-left: 0.25em;
+.card-action .how-to-make {
+	font-weight: bold;
+	font-size: 1.25em;
+
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+	color: #9c27b0;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating):hover {
+	color: #82b1ff;
 }
 
 /*create post page*/

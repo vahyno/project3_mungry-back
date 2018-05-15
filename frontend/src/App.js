@@ -11,9 +11,9 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="App ">
         <nav>
-            <div className="nav-wrapper">
+            <div className="nav-wrapper deep-purple lighten-2">
               <p className="brand-logo">Hungry Mungry's Recipe Book</p>
               <ul id="nav-mobile" className="right hide-on-med-and-down">
                 <li><Link to ="/" >Home</Link></li>

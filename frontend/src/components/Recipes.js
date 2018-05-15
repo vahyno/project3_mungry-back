@@ -19,7 +19,7 @@ class Recipes extends Component {
   }
 
   incrementVote = (recipe_id) => {
-    console.log('recipe_id',recipe_id);
+    // console.log('recipe_id',recipe_id);
     let recipeToUpdate = this.state.results.filter(result => result._id === recipe_id);
     let updatedVotes = recipeToUpdate[0].votes + 1;
     let recipe = {...recipeToUpdate[0], votes: updatedVotes};
@@ -30,7 +30,7 @@ class Recipes extends Component {
 
     RecipesModel.voteUpdate(recipe_id, recipe)
     .then(updatedRecipe => {
-      console.log('Updated Recipe: ',updatedRecipe.data);
+      // console.log('Updated Recipe: ',updatedRecipe.data);
       let updatedRecipes = this.state.results.filter(recipe => recipe._id !== recipe_id);
       let returnedRecipe = updatedRecipe.data;
       // console.log('updatedRecipes', updatedRecipes);
@@ -41,6 +41,17 @@ class Recipes extends Component {
   }
 
   decrementVote = (recipe_id) => {
+    let recipeToUpdate = this.state.results.filter(result => result._id === recipe_id);
+    let updatedVotes = recipeToUpdate[0].votes - 1;
+    let recipe = {...recipeToUpdate[0], votes: updatedVotes};
+
+    RecipesModel.voteUpdate(recipe_id, recipe)
+    .then(updatedRecipe => {
+      let updatedRecipes = this.state.results.filter(recipe => recipe._id !== recipe_id);
+      let returnedRecipe = updatedRecipe.data;
+      let newRecipes = updatedRecipes.concat(returnedRecipe);
+      this.setState({ results: newRecipes })
+    });
 
   }
 
@@ -48,7 +59,7 @@ class Recipes extends Component {
 
   render(){
 
-    console.log('State = ', this.state.results)
+    // console.log('State = ', this.state.results)
 
     let results = this.state.results !== null
       ? this.state.results
@@ -83,7 +94,7 @@ class Recipes extends Component {
                  </div>
                </div>
                <div className="card-action">
-                 <Link to ={`/recipes/${recipe._id}`}>How to make</Link>
+                 <Link to ={`/recipes/${recipe._id}`} className="how-to-make">How to make</Link>
                </div>
              </div>
             </div>
