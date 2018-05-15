@@ -18,15 +18,43 @@ class Recipes extends Component {
       });
   }
 
+  incrementVote = (recipe_id) => {
+    let recipeToUpdate = this.state.results.filter(result => result._id === recipe_id);
+    console.log('recipeToUpdate',recipeToUpdate);
+    console.log('recipe_id',recipe_id);
+
+    let updatedRecipe = recipeToUpdate[0].votes + 1;
+    // console.log("checking votes" , votes);
+    let recipe = {...recipeToUpdate[0], votes: updatedRecipe}
+    console.log("incremented vote" , recipe)
+    RecipesModel.voteUpdate(recipe_id, recipe)
+    .then(results => {
+      // this.setState({
+      //   results: updatedResults
+      // });
+      // console.log(results.data);
+    });
+    // console.log(this.state);
+  }
+
+  decrementVote = () => {
+    let votes = this.state.votes;
+    console.log("checking vote - ", votes)
+
+  }
+
+
+
   render(){
 
     console.log(this.state.results)
 
-    let results = this.state.results
+    let results = this.state.results !== null
       ? this.state.results
-        .sort(((a,b) => {
+        .sort((a,b) => {
           return b.votes - a.votes;
-        })).map(recipe => {
+        })
+        .map(recipe => {
           console.log("Single Recipe: ", recipe)
 
           return (
@@ -48,9 +76,9 @@ class Recipes extends Component {
                  <h6>  Vote  </h6 >
 
                  <div className="vote">
-                   <a className="btn-floating btn-small waves-effect waves-light green"><i className="material-icons">+</i></a>
+                   <button onClick={()=>this.incrementVote(recipe._id)} className="btn-floating btn-small waves-effect waves-light green"><i className="material-icons">+</i></button>
                    <h6>{recipe.votes}</h6>
-                   <a className="btn-floating btn-small waves-effect waves-light red"><i className="material-icons">-</i></a>
+                   <button onClick={()=>this.decrementVote(recipe._id)} className="btn-floating btn-small waves-effect waves-light red"><i className="material-icons">-</i></button>
                  </div>
                  </div>
                </div>

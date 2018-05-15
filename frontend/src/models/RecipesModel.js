@@ -24,10 +24,15 @@ class RecipesModel {
   }
 
   static commentDestroy = (recipe_id, comment_id) => {
-    const request = axios.delete(`http://localhost:8080/api/recipes/${recipe_id}/comments/${comment_id}`)
+    const request = axios.delete(`http://localhost:8080/api/recipes/${recipe_id}/comments/${comment_id}`);
     return request;
   }
 
+  static voteUpdate = (recipe_id, recipe) => {
+    console.log('Axios recipe_id', recipe_id)
+    const request = axios.put(`http://localhost:8080/api/recipes/${recipe_id}`, recipe);
+    return request;
+  }
 
 
 }
