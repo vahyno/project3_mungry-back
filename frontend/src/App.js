@@ -13,8 +13,17 @@ import './App.css';
 class App extends Component {
   render() {
     return (
+
       <div className="App ">
         <nav>
+
+        <div class="dropdown">
+          <button class="dropbtn"><div class="hamburger"><i class="fas fa-bars"></i></div></button>
+          <div id="myDropdown" class="dropdown-content">
+              <li><Link to ="/" >Home</Link></li>
+              <li><Link to ="/recipes/new" >Create Recipe</Link></li>
+          </div>
+      </div>
             <div className="nav-wrapper deep-purple lighten-2">
               <p className="brand-logo">Hungry Mungry's Recipe Book</p>
               <ul id="nav-mobile" className="right hide-on-med-and-down">
@@ -26,6 +35,8 @@ class App extends Component {
 
 
 
+
+
         <Switch>
           <Route path="/" exact component={Recipes} />
           <Route path="/recipes/new" exact component={NewRecipe} />
@@ -33,6 +44,13 @@ class App extends Component {
           <Route path="/recipes/:recipe_id" exact component={SingleRecipe} />
         </Switch>
 
+        <footer>
+          <div className="footer-copyright">
+              <div className="container">
+              © 2018 Made by Emma & Michal
+              </div>
+          </div>
+        </footer>
 
       </div>
     );
