@@ -96,11 +96,11 @@ class SingleRecipe extends Component {
     return (
       <div>
         <h4 id=""> { post.title } </h4>
-        <img src={ post.image_url } alt={post.title}/>
+        <img src={ post.image_url } alt={post.title} className="singleRecipeImg"/>
         <div>
         {/*  <button className="waves-effect waves-light indigo lighten-2 btn right update-delete-btn">Update Recipe</button> */}
-          <Link to ={{pathname: `/recipes/${post._id}/update`, state: {oldFormData: this.state.post}}} className="waves-effect waves-light indigo lighten-2 btn right update-delete-btn">Update Recipe</Link>
-          <button onClick={() => this.handleDelete(post._id)} className="waves-effect waves-light indigo lighten-2 btn right update-delete-btn">Delete Recipe</button>
+          <Link to ={{pathname: `/recipes/${post._id}/update`, state: {oldFormData: this.state.post}}} className="waves-effect waves-light indigo lighten-2 btn right update-btn">Update Recipe</Link>
+          <button onClick={() => this.handleDelete(post._id)} className="waves-effect waves-light indigo lighten-2 btn right delete-btn">Delete Recipe</button>
         </div>
         <div className="single-post">
           <div className="ingredients-section">
@@ -122,7 +122,7 @@ class SingleRecipe extends Component {
                   placeholder="Write your comment!"
                   id="comment"
                   type="text"
-                  className="validate" />
+                  className="validate" required/>
               </div>
             </div>
               <button className="waves-effect waves-light indigo lighten-2 btn" type="submit" name="action">New Comment</button>
