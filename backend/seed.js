@@ -2,11 +2,11 @@
 var db = require('./models');
 
 var comments = [{
-  content: 'Yeah real tasty.',
+  content: 'Yum Awesome !!!',
 }, {
-  content: 'Easy to make, would do again.',
+  content: 'Delicious and easy to make!',
 }, {
-  content: 'Awesome !!!!!!!',
+  content: 'Yeah, real tasty.',
 }];
 
 
@@ -16,8 +16,8 @@ var seedRecipes = [{
   ingredients: '1 15-oz. can Chickpeas, 1 handful Cilantro leaves, 2 small cloves Garlic, 1/4 tsp Ginger - ground, 2 Green onions, 1 Lime - zest and juice, 1/2 tbsp Honey, 2 tbsp Peanut butter, 2 tbsp Sriracha, Salt, Pepper',
   directions: 'Add chickpeas, peanut butter, Sriracha, ginger, garlic, honey/maple syrup/agave, and salt and pepper to taste into a food processor. Process until broken up. Scrape the sides with a spatula as needed. With the motor running, drizzle in olive oil and ice water. This will help the mixture come together and get super-smooth! Once the hummus is processed to your desired texture, taste and adjust seasoning as necessary. Mix in peanuts, green onions, and cilantro with a spatula. Serve with tortilla chips and a squeeze of lime.',
   image_url: `/imgs/thai-peanut-hummus.jpg`,
-  votes: 12,
-  comments: [comments[0], comments[1]],
+  votes: 30,
+  comments: [comments[2]],
 },{
   title: 'Avocado Quinoa Bowl',
   description: `So much goodness in a single bowl but it still only takes 15 minutes to throw together! Find tofu, a heap of veggies, avocado, and quinoa in here, all jazzed up with a handful of spices. Whoever thought eating vegan meant skimping on nutrition should meet this recipe.`,
@@ -46,7 +46,7 @@ Once the eggs are cooked fully, transfer the mixture to a bowl with quinoa and t
 Top the vegetable mixture with sliced avocado and sprouts, and garnish with another squeeze of lime and some additional salt and pepper if preferred.
 Enjoy!`,
   image_url: `/imgs/avocado.jpg`,
-  votes: 30,
+  votes: 9,
   comments: [],
 },{
   title: 'Key Lime Pie',
@@ -61,7 +61,7 @@ Bake in preheated oven for 15 minutes. Allow to cool. Top with whipped topping a
   image_url: `/imgs/keylimepie.jpg`,
   // image_url: `https://images.media-allrecipes.com/userphotos/720x405/5339695.jpg`,
   votes: 310,
-  comments: [comments[2]],
+  comments: [comments[0],comments[1]],
 }]
 
 // Remove Comments

@@ -110,7 +110,7 @@ class NewRecipe extends Component {
             <div className="input-field col s12">
               <input onChange={ this.handleThumbnailChange } value={this.state.thumbnail} placeholder="Add image source" id="image" type="text" className="validate"/>
             </div>
-            <button className="waves-effect waves-light indigo lighten-2 btn right update-delete-btn" type="submit" name="action">Create</button>
+            <button className="waves-effect waves-light indigo lighten-2 btn create-btn" type="submit" name="action">Create</button>
           </form>
         </div>
 
