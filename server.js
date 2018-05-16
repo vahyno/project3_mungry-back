@@ -29,9 +29,15 @@ app.get('/api/profiles', function(req, res){
   })
 });
 
-app.get('/', function (req, res) {
-  res.send('Hello World!!!');
+app.get('/', function(req, res){
+  res.json({
+    project: `Hungry Mungry's Recipe Book - backend`
+    name:"Emma & Michal",
+    githubUserNames: ["emmazingjane","vahyno"],
+    githubLinks: ["https://github.com/emmazingjane","https://github.com/vahyno"],
+  })
 });
+
 
 //Recipe Routes
 app.get('/api/recipes', recipesController.index);
