@@ -31,7 +31,7 @@ app.get('/api/profiles', function(req, res){
 
 app.get('/', function(req, res){
   res.json({
-    project: `Hungry Mungry's Recipe Book - backend`
+    project: `Hungry Mungry's Recipe Book - backend`,
     name:"Emma & Michal",
     githubUserNames: ["emmazingjane","vahyno"],
     githubLinks: ["https://github.com/emmazingjane","https://github.com/vahyno"],
