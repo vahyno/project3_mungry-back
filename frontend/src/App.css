@@ -136,29 +136,35 @@ textarea {
 
 
 @media screen and (max-width: 760px){
-/*	nav .brand-logo {
-		font-size: 16px;
-		margin-left: auto;
-	}
-	nav ul {
-		font-size: 16px;
-		margin: auto;
-	}*/
+
 
 	.hamburger {
 		display: block;
 	}
 
 	.fa .fas {
-		color: ;
+		color: #000;
+		height: 45px;
 	}
 
 	.fa-bars:before {
 		color: #8F78C8;
 	}
+
 	.nav-wrapper {
 		display: none;
+
 	}
+
+	.dropbtn:hover, .dropbtn:focus {
+    background-color: #FFF;
+	}
+
+
+	nav {
+		background-color: #8F78C8; 
+	}
+
 
 	.dropbtn {
 	    background-color: #FFF;
@@ -169,12 +175,13 @@ textarea {
 	    cursor: pointer;
 	    text-align: right;
 	    margin: auto;
+	    height: 50px;
 
 	}
 
 	/* Dropdown button on hover & focus */
 	.dropbtn:hover, .dropbtn:focus {
-	    background-color: #2980B9;
+	    background-color: #FFF;
 	}
 
 	/* The container <div> - needed to position the dropdown content */
@@ -209,6 +216,12 @@ textarea {
 	/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 	.show {
 		display:block;
+	}
+
+	/*single post page*/
+
+	.sigle-post {
+		margin: .5em;
 	}
 
  }
