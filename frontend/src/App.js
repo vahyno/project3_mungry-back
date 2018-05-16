@@ -17,9 +17,9 @@ class App extends Component {
       <div className="App ">
         <nav>
 
-        <div class="dropdown">
-          <button class="dropbtn"><div class="hamburger"><i class="fas fa-bars"></i></div></button>
-          <div id="myDropdown" class="dropdown-content">
+        <div className="dropdown">
+          <button className="dropbtn"><div className="hamburger"><i className="fas fa-bars"></i></div></button>
+          <div id="myDropdown" className="dropdown-content">
               <li><Link to ="/" >Home</Link></li>
               <li><Link to ="/recipes/new" >Create Recipe</Link></li>
           </div>

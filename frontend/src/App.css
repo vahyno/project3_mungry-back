@@ -134,6 +134,10 @@ textarea {
 	}
 
 	.fa .fas {
+		color: ;
+	}
+
+	.fa-bars:before {
 		color: #8F78C8;
 	}
 	.nav-wrapper {
